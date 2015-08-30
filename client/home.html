@@ -1,0 +1,84 @@
+<template name="home">
+  <main>
+    <section>
+      <header>
+        <div id="paperplane"></div>
+        <h1 id="title">paper
+          <span>plane</span>
+        </h1>
+      </header>
+      <div id="error">error</div>
+      {{#if currentUser}}
+      <h3 id="updateDomainsNotes">List all domains that will use our backend, seperated by a coma. (no space)</h3>
+      <div id="bar">
+        <button id="signOutButton">
+          <div class="left-arrow"></div>
+          <div class="buttonText">Sign Me Out</div>
+        </button>
+        <div id="emailBar">{{currentUser.emails.[0].address}}</div>
+        <button id="updateDomainsButton">
+
+          <div class="buttonText">Update Domains</div>
+          <div class="right-arrow"></div>
+        </button>
+      </div>
+      <!--textarea must be in oneline so that placeholder works and no weird indentation happen-->
+      <textarea id="updateDomains" placeholder="domain1.com,domain2.com,domain3.com" value={{domains}}></textarea>
+      {{else}} {{#if loggingIn}} {{else}}
+      <h1>Ridiculously Simple &amp; Free Backend
+        <br>for Your Web Forms.</h1>
+      <form id="getStartedForm">
+        <div class="textField">
+          <div class="label">
+            <div>Your Email</div>
+          </div>
+          <div class="input">
+            <input type="text" id="email" placeholder="example@ex.com">
+          </div>
+        </div>
+
+        <div class="textField">
+          <div class="label">
+            <div>Your Password</div>
+          </div>
+          <div class="input">
+            <input type="password" id="password" placeholder="make it good!">
+          </div>
+        </div>
+        <button type="submit" id="getStartedButton">
+          <div class="buttonText">Get Started</div>
+          <div class="right-arrow"></div>
+        </button>
+
+      </form>
+      {{/if}} {{/if}}
+    </section>
+
+    <section>
+      <h1>Call Our API</h1>
+      <h2>After you sign up and add your domains, just make a post request
+        <br>to our backend, and you're golden! You'll receive an email
+        <br>with the form data on every submission.</h2>
+      <pre>
+        <code class="js">$.ajax({ type: "POST", url: "http://flypaperplane.com/api", data: { // Example Form Data. Get it dynamically from user! email: "hello@example.com", message: "Hello World" }, success: function(response) { console.log(response); }, dataType: "json"
+          });
+        </code>
+      </pre>
+    </section>
+    <section>
+
+      <h1>Be Creative</h1>
+
+      <h2 style="width: 800px; margin:auto;">You can use paperplane for any type of web forms, from simple contact forms to long surveys. You can be even more creative and use it to deliver any type of data right to your mailbox, such as your users' activity on your website or items they want
+        to order. Sky is the limit!</h2>
+
+      <footer>
+        <h2 id="footer">Made With
+          <span></span> By
+          <br><a href="http://eahefnawy.com">eahefnawy.com</a>
+        </h2>
+        
+      </footer>
+    </section>
+  </main>
+</template>
