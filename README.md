@@ -1,4 +1,4 @@
-# PaperPlane
+# flypaperplane.com
 :airplane: ridiculously simple &amp; free backend  for your web forms - http://flypaperplane.com
 
 **Note:** This project is set to be deprecated soon and will be replaced with [Paperplane (Powered by JAWS)](https://github.com/eahefnawy/paperplane)
